@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Feed - BRbook</title>
+</head>
+<body>
+    <h1>Feed de {{ usuario }}</h1>
+    <form method="POST">
+        <textarea name="conteudo" placeholder="O que você está pensando?" required></textarea>
+        <button type="submit">Postar</button>
+    </form>
+    <ul>
+        {% for post in posts %}
+        <li><strong>{{ post[1] }}</strong>: {{ post[2] }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('noticias') }}">Notícias</a> | 
+    <a href="{{ url_for('notificacoes') }}">Notificações</a> | 
+    <a href="{{ url_for('logout') }}">Sair</a>
+</body>
+</html>

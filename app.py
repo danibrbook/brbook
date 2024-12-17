@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request, redirect, url_for, session
+from urllib.parse import quote
 import sqlite3
 import requests
 
+url = quote("sua_string_aqui")
 app = Flask(__name__)
 app.secret_key = "dc7075624f3c41c783f4666041277e33"
 
